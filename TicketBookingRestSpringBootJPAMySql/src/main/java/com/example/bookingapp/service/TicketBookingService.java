@@ -1,5 +1,6 @@
 package com.example.bookingapp.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,27 @@ public class TicketBookingService {
 		return savedt;
 		
 		
+	}
+
+
+	public List<Ticket> getTicketbyEmail(String email) {
+		return ticketBookingDao.findByEmail(email);
+	}
+	
+	
+	public List<Ticket> getTicketbySiourceStation(String sourceStation) {
+		return ticketBookingDao.finaBySourceStation(sourceStation);
+	}
+
+
+	public List<Ticket> getTicketbyDestStation(String deststation) {
+		// TODO Auto-generated method stub
+		return ticketBookingDao.finaByDestStation(deststation);
+	}
+
+
+	public List<Ticket> getTicketbyPassengername(String passengername) {
+		return ticketBookingDao.finaByPassengername(passengername);
 	}
 
 }

@@ -1,0 +1,1 @@
+INSERT INTO itquser_data.ticket(ticket_id,passenger_name,booking_date,source_station,dest_station,email) VALUES(1,'itq1','2017/07/07','Miami','FLL','itq0813@yahoo.com');

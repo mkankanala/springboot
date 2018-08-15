@@ -7,10 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="ticket")
+@NamedQuery(name = "Ticket.finaBySourceStation", query = "select t from Ticket t where t.sourceStation =?1")
+@NamedNativeQuery(name = "Ticket.finaByDestStation", query = "select * from ticket where dest_station = ?1",resultClass=Ticket.class)
 public class Ticket {
 
 	@Id

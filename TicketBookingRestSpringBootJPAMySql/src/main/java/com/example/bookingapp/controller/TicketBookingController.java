@@ -1,5 +1,6 @@
 package com.example.bookingapp.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,36 @@ public class TicketBookingController {
 	public Optional<Ticket>  getTicketbyId(@PathVariable("ticketid") Integer  ticketid) {
 		
 		return ticketBookingService.getTicketbyId(ticketid);
+		
+		
+	}
+	
+	@GetMapping(value="/fetch/{email:.*}")
+	public List<Ticket>  getTicketbyEmail(@PathVariable("email") String  email) {
+		
+		return ticketBookingService.getTicketbyEmail(email);
+	}
+	
+	@GetMapping(value="/fetch/{sourceStation}")
+	public List<Ticket>  getTicketBySourceStation(@PathVariable("sourceStation") String  sourcestation) {
+		
+		return ticketBookingService.getTicketbySiourceStation(sourcestation);
+		
+		
+	}
+	
+	@GetMapping(value="/dest/{destStation}")
+	public List<Ticket>  getTicketBydestStation(@PathVariable("destStation") String  deststation) {
+		
+		return ticketBookingService.getTicketbyDestStation(deststation);
+		
+		
+	}
+	
+	@GetMapping(value="/passenger/{passengername}")
+	public List<Ticket>  getTicketByPname(@PathVariable("passengername") String  passengername) {
+		
+		return ticketBookingService.getTicketbyPassengername(passengername);
 		
 		
 	}
